@@ -7,11 +7,13 @@ const router = require('./router/products');
 const connectDB = require('./db/connection');
 const mongoose = require('mongoose');
 const notFound = require('./middlewares/not_found'); 
+const errorHandler = require('./middlewares/error/error_handler');
 
 // middlewares 
 app.use(express.json());
 app.use(endpoint,router);
 app.use(notFound);
+app.use(errorHandler);
 
 
 //connecting to the data base 

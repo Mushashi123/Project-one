@@ -1,11 +1,12 @@
-class error{
-    constructor(code,message){
-        this.code = code,
-        this.message = message
-    }
-    static internal(msg){
-        return new error(500,msg);
+class CustomError extends Error{
+    constructor(message,statusCode){
+        super(message);
+        this.statusCode = statusCode
     }
 }
 
-module.exports = error;
+const createCustomError = (msg,statusCode)=>{
+    return new CustomError(msg,statusCode);
+}
+
+module.exports = {createCustomError,CustomError};
