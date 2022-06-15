@@ -19,7 +19,12 @@ const productSchema = new mongoose.Schema({
     insertedAt:{
         type:Date,
         default:Date.now()
+    },
+    price : {
+        type:Number,
+        default : 100.00
     }
+
 });
 
 module.exports = mongoose.model('products',productSchema);

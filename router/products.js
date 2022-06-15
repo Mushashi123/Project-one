@@ -5,7 +5,9 @@ const {getAllProducts,
     getOneProduct,
     insertProduct,
     updateProduct,
-    deleteProduct} = require('../controllers/products');
+    deleteProduct
+    
+} = require('../controllers/products');
 
 
 // all the routes handelling 
