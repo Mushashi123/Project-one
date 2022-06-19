@@ -8,13 +8,14 @@ const {getAllProducts,
     deleteProduct
     
 } = require('../controllers/products');
-const {createToken,authorize} = require('../controllers/authorize');
+const {SignUp,authorize,login} = require('../controllers/authorize');
 
 
 //using router level middleware to create and authorize 
 
 // go to login route and get a valid jwt token 
-router.route('/login').get(createToken);
+router.route('/signup').get(SignUp);
+router.route('/login').get(login);
 
     router.use(authorize);
 
